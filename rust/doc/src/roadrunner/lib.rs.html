@@ -864,6 +864,10 @@
 <span id="819">819</span>
 <span id="820">820</span>
 <span id="821">821</span>
+<span id="822">822</span>
+<span id="823">823</span>
+<span id="824">824</span>
+<span id="825">825</span>
 </pre><pre class="rust ">
 <span class="attribute">#<span class="op">!</span>[<span class="ident">deny</span>(<span class="ident">missing_docs</span>)]</span>
 
@@ -904,7 +908,11 @@
 <span class="doccomment">//!         city: &quot;San Francisco&quot;.to_owned(),</span>
 <span class="doccomment">//!     };</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//!     let response = RestClient::post(&quot;http://mockbin.com/request&quot;)</span>
+<span class="doccomment">//!     // Hit the local httpbin container in docker.</span>
+<span class="doccomment">//!     // Please see a similar example in repo readme</span>
+<span class="doccomment">//!     // (https://github.com/luanzhu/roadrunner) if you would like to try</span>
+<span class="doccomment">//!     // this example.</span>
+<span class="doccomment">//!     let response = RestClient::post(&quot;http://localhost:8000/post&quot;)</span>
 <span class="doccomment">//!         .cookie(&quot;food&quot;, &quot;bar&quot;)</span>
 <span class="doccomment">//!         .authorization_bearer(&quot;QWxhZGRpbjpvcGVuIHNlc2FtZQ&quot;.to_string())</span>
 <span class="doccomment">//!         .json_body_typed(&amp;original_typed)</span>
@@ -917,9 +925,9 @@
 <span class="doccomment">//!</span>
 <span class="doccomment">//!     let json_value = response.content().as_value().unwrap();</span>
 <span class="doccomment">//!     assert_eq!(Value::String(&quot;application/json&quot;.to_owned()),</span>
-<span class="doccomment">//!                 json_value[&quot;headers&quot;][&quot;content-type&quot;]);</span>
+<span class="doccomment">//!                 json_value[&quot;headers&quot;][&quot;Content-Type&quot;]);</span>
 <span class="doccomment">//!</span>
-<span class="doccomment">//!     let data_str = json_value[&quot;postData&quot;][&quot;text&quot;].as_str().unwrap();</span>
+<span class="doccomment">//!     let data_str = json_value[&quot;data&quot;].as_str().unwrap();</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//!     println!(&quot;data_str : {:?}&quot;, data_str);</span>
 <span class="doccomment">//!</span>
