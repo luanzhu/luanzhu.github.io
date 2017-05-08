@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `RestClientMethods` trait in crate `roadrunner`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, RestClientMethods">
+
+    <title>roadrunner::RestClientMethods - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'><a href='index.html'>roadrunner</a></p><script>window.sidebarCurrent = {name: 'RestClientMethods', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='index.html'>roadrunner</a>::<wbr><a class="trait" href=''>RestClientMethods</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../src/roadrunner/lib.rs.html#363-423' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub trait RestClientMethods {
+    fn <a href='#tymethod.cookie' class='fnname'>cookie</a>&lt;K, V&gt;(self, name: K, value: V) -&gt; Self <span class="where fmt-newline">where K: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;, V: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;</span>;
+    fn <a href='#tymethod.authorization_basic' class='fnname'>authorization_basic</a>(self, username: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>, password: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self;
+    fn <a href='#tymethod.authorization_bearer' class='fnname'>authorization_bearer</a>(self, token: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self;
+    fn <a href='#tymethod.authorization_string' class='fnname'>authorization_string</a>(self, custom: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self;
+    fn <a href='#tymethod.accept' class='fnname'>accept</a>(self, media_type: <a class="struct" href="https://hyperium.github.io/hyper/hyper/header/shared/quality_item/struct.QualityItem.html" title="struct hyper::header::shared::quality_item::QualityItem">QualityItem</a>&lt;<a class="struct" href="https://hyperium.github.io/mime.rs/mime/struct.Mime.html" title="struct mime::Mime">Mime</a>&gt;) -&gt; Self;
+    fn <a href='#tymethod.header_set_raw' class='fnname'>header_set_raw</a>&lt;K&gt;(self, name: K, values: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;) -&gt; Self <span class="where fmt-newline">where K: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;</span>;
+    fn <a href='#tymethod.header_append_raw' class='fnname'>header_append_raw</a>&lt;K&gt;(self, name: K, value: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self <span class="where fmt-newline">where K: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;</span>;
+    fn <a href='#tymethod.query_param' class='fnname'>query_param</a>(self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, value: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; Self;
+    fn <a href='#tymethod.form_field' class='fnname'>form_field</a>(self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, value: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; Self;
+    fn <a href='#tymethod.json_body_str' class='fnname'>json_body_str</a>(self, json_string: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self;
+    fn <a href='#tymethod.json_body_typed' class='fnname'>json_body_typed</a>&lt;T&gt;(self, typed_value: &amp;T) -&gt; Self <span class="where fmt-newline">where T: <a class="trait" href="https://docs.rs/serde/1.0.2/serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a></span>;
+    fn <a href='#tymethod.user_agent' class='fnname'>user_agent</a>&lt;K&gt;(self, agent: K) -&gt; Self <span class="where fmt-newline">where K: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;</span>;
+    fn <a href='#tymethod.user_agent_firefox' class='fnname'>user_agent_firefox</a>(self) -&gt; Self;
+    fn <a href='#tymethod.user_agent_chrome' class='fnname'>user_agent_chrome</a>(self) -&gt; Self;
+    fn <a href='#tymethod.execute_on' class='fnname'>execute_on</a>(self, core: &amp;mut <a class="struct" href="https://docs.rs/tokio-core/0.1/tokio_core/reactor/struct.Core.html" title="struct tokio_core::reactor::Core">Core</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../roadrunner/struct.Response.html" title="struct roadrunner::Response">Response</a>, <a class="enum" href="../roadrunner/enum.Error.html" title="enum roadrunner::Error">Error</a>&gt;;
+}</pre><div class='docblock'><p>Provides a high level API that one can use to configure and execute a request.</p>
+</div>
+            <h2 id='required-methods'>Required Methods</h2>
+            <div class='methods'>
+        <h3 id='tymethod.cookie' class='method'><span id='cookie.v' class='invisible'><code>fn <a href='#tymethod.cookie' class='fnname'>cookie</a>&lt;K, V&gt;(self, name: K, value: V) -&gt; Self <span class="where fmt-newline">where K: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;, V: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;</span></code></span></h3><div class='docblock'><p>Set cookie for request, can be called multiple times to set multiple cookies.</p>
+</div><h3 id='tymethod.authorization_basic' class='method'><span id='authorization_basic.v' class='invisible'><code>fn <a href='#tymethod.authorization_basic' class='fnname'>authorization_basic</a>(self, username: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>, password: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self</code></span></h3><div class='docblock'><p>Set username and password for basic authentication header.</p>
+</div><h3 id='tymethod.authorization_bearer' class='method'><span id='authorization_bearer.v' class='invisible'><code>fn <a href='#tymethod.authorization_bearer' class='fnname'>authorization_bearer</a>(self, token: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self</code></span></h3><div class='docblock'><p>Set oauth token for oauth authentication.</p>
+</div><h3 id='tymethod.authorization_string' class='method'><span id='authorization_string.v' class='invisible'><code>fn <a href='#tymethod.authorization_string' class='fnname'>authorization_string</a>(self, custom: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self</code></span></h3><div class='docblock'><p>Set a custom authentication header.</p>
+</div><h3 id='tymethod.accept' class='method'><span id='accept.v' class='invisible'><code>fn <a href='#tymethod.accept' class='fnname'>accept</a>(self, media_type: <a class="struct" href="https://hyperium.github.io/hyper/hyper/header/shared/quality_item/struct.QualityItem.html" title="struct hyper::header::shared::quality_item::QualityItem">QualityItem</a>&lt;<a class="struct" href="https://hyperium.github.io/mime.rs/mime/struct.Mime.html" title="struct mime::Mime">Mime</a>&gt;) -&gt; Self</code></span></h3><div class='docblock'><p>Set Accept header for the request. If none is specified, the
+default <em>application/json</em> will be used.</p>
+</div><h3 id='tymethod.header_set_raw' class='method'><span id='header_set_raw.v' class='invisible'><code>fn <a href='#tymethod.header_set_raw' class='fnname'>header_set_raw</a>&lt;K&gt;(self, name: K, values: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/vec/struct.Vec.html" title="struct collections::vec::Vec">Vec</a>&lt;<a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>&gt;) -&gt; Self <span class="where fmt-newline">where K: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;</span></code></span></h3><div class='docblock'><p>Set a header with a raw string, existing value of the
+same header will be overwritten.</p>
+</div><h3 id='tymethod.header_append_raw' class='method'><span id='header_append_raw.v' class='invisible'><code>fn <a href='#tymethod.header_append_raw' class='fnname'>header_append_raw</a>&lt;K&gt;(self, name: K, value: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self <span class="where fmt-newline">where K: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;</span></code></span></h3><div class='docblock'><p>Append a header with a raw string, existing value of the
+same header will NOT be overwritten.</p>
+</div><h3 id='tymethod.query_param' class='method'><span id='query_param.v' class='invisible'><code>fn <a href='#tymethod.query_param' class='fnname'>query_param</a>(self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, value: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; Self</code></span></h3><div class='docblock'><p>Append url query parameters.</p>
+</div><h3 id='tymethod.form_field' class='method'><span id='form_field.v' class='invisible'><code>fn <a href='#tymethod.form_field' class='fnname'>form_field</a>(self, name: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>, value: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>) -&gt; Self</code></span></h3><div class='docblock'><p>Set form fields for the request. This method can be called
+multiple times.  All fields will be encoded and send as
+request body.</p>
+
+<p>Note: Content-Type will be set to <em>application/x-www-form-urlencoded</em>.</p>
+</div><h3 id='tymethod.json_body_str' class='method'><span id='json_body_str.v' class='invisible'><code>fn <a href='#tymethod.json_body_str' class='fnname'>json_body_str</a>(self, json_string: <a class="struct" href="https://doc.rust-lang.org/nightly/collections/string/struct.String.html" title="struct collections::string::String">String</a>) -&gt; Self</code></span></h3><div class='docblock'><p>Set request body as a json string.</p>
+
+<p>Note: Content-Type will be set to <em>application/json</em>.</p>
+</div><h3 id='tymethod.json_body_typed' class='method'><span id='json_body_typed.v' class='invisible'><code>fn <a href='#tymethod.json_body_typed' class='fnname'>json_body_typed</a>&lt;T&gt;(self, typed_value: &amp;T) -&gt; Self <span class="where fmt-newline">where T: <a class="trait" href="https://docs.rs/serde/1.0.2/serde/ser/trait.Serialize.html" title="trait serde::ser::Serialize">Serialize</a></span></code></span></h3><div class='docblock'><p>Parameter typed_value will be serialized into a json string and
+sent as the request body.</p>
+
+<p>Note: Content-Type will be set to <em>application/json</em>.</p>
+</div><h3 id='tymethod.user_agent' class='method'><span id='user_agent.v' class='invisible'><code>fn <a href='#tymethod.user_agent' class='fnname'>user_agent</a>&lt;K&gt;(self, agent: K) -&gt; Self <span class="where fmt-newline">where K: <a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="enum" href="https://doc.rust-lang.org/nightly/collections/borrow/enum.Cow.html" title="enum collections::borrow::Cow">Cow</a>&lt;'static, <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.str.html">str</a>&gt;&gt;</span></code></span></h3><div class='docblock'><p>Set the user agent header for request.  If none is specified,
+the default string <code>DEFAULT_USER_AGENT</code> will be used.</p>
+</div><h3 id='tymethod.user_agent_firefox' class='method'><span id='user_agent_firefox.v' class='invisible'><code>fn <a href='#tymethod.user_agent_firefox' class='fnname'>user_agent_firefox</a>(self) -&gt; Self</code></span></h3><div class='docblock'><p>Set the user agent as firefox.  This may be needed when a server
+only accepts requests from well-known user agents.</p>
+</div><h3 id='tymethod.user_agent_chrome' class='method'><span id='user_agent_chrome.v' class='invisible'><code>fn <a href='#tymethod.user_agent_chrome' class='fnname'>user_agent_chrome</a>(self) -&gt; Self</code></span></h3><div class='docblock'><p>Set the user agent as chrome.</p>
+</div><h3 id='tymethod.execute_on' class='method'><span id='execute_on.v' class='invisible'><code>fn <a href='#tymethod.execute_on' class='fnname'>execute_on</a>(self, core: &amp;mut <a class="struct" href="https://docs.rs/tokio-core/0.1/tokio_core/reactor/struct.Core.html" title="struct tokio_core::reactor::Core">Core</a>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../roadrunner/struct.Response.html" title="struct roadrunner::Response">Response</a>, <a class="enum" href="../roadrunner/enum.Error.html" title="enum roadrunner::Error">Error</a>&gt;</code></span></h3><div class='docblock'><p>Finish setting up the request, and kick off request execution
+on a <code>tokio_core::reactor::Core</code>.</p>
+</div></div>
+        <h2 id='implementors'>Implementors</h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl RestClientMethods for <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../roadrunner/struct.RestClient.html" title="struct roadrunner::RestClient">RestClient</a>, <a class="enum" href="../roadrunner/enum.Error.html" title="enum roadrunner::Error">Error</a>&gt;</code></li>
+</ul><script type="text/javascript" async
+                         src="../implementors/roadrunner/trait.RestClientMethods.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "roadrunner";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    <script defer src="../search-index.js"></script>
+</body>
+</html>
